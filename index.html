@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PrisFlower</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<header class="navbar">
+    <div class="logo">
+        <img src="img/logo.png" alt="logo">
+    </div>
+
+    <nav class="menu">
+        <a href="index.html">Inicio</a>
+        <a href="#productos">Productos</a>
+        <a href="carrito.html" class="carrito-icon">Carrito <span id="contadorCarrito">0</span></a>
+    </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+    <h1>Detalles que Florecen Contigo</h1>
+    <p>Arreglos artesanales de limpia pipa ✨</p>
+    <a href="#productos" class="btn">Ver Catálogo</a>
+</section>
+
+<!-- PRODUCTOS -->
+<section id="productos" class="productos-section">
+    <h2>Nuestros Productos</h2>
+
+    <div class="productos-grid">
+
+        <div class="producto" onclick="verProducto(0)">
+            <img src="img/lirio.jpg">
+            <h3>Bouquet de Lirios</h3>
+            <p class="precio">$18.00</p>
+            <button onclick="agregarCarrito(0); event.stopPropagation()">Añadir al carrito</button>
+        </div>
+
+        <div class="producto" onclick="verProducto(1)">
+            <img src="img/cupula.jpg">
+            <h3>Girasol en Cúpula</h3>
+            <p class="precio">$22.00</p>
+            <button onclick="agregarCarrito(1); event.stopPropagation()">Añadir al carrito</button>
+        </div>
+
+        <div class="producto" onclick="verProducto(2)">
+            <img src="img/cesta.jpg">
+            <h3>Cesta de Girasoles</h3>
+            <p class="precio">$25.00</p>
+            <button onclick="agregarCarrito(2); event.stopPropagation()">Añadir al carrito</button>
+        </div>
+
+        <div class="producto" onclick="verProducto(3)">
+            <img src="img/rosa.jpg">
+            <h3>Caja Romántica</h3>
+            <p class="precio">$15.00</p>
+            <button onclick="agregarCarrito(3); event.stopPropagation()">Añadir al carrito</button>
+        </div>
+
+    </div>
+</section>
+
+<!-- TOAST -->
+<div id="toast">Producto añadido al carrito 🌸</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+    <p>
+        © 2025 PRISFLOWER · Ecuador  
+        · <a href="privacidad.html">Política de privacidad</a>  
+        · <a href="envios.html">Política de envíos</a>
+    </p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
