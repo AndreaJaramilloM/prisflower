@@ -150,14 +150,13 @@ if(document.getElementById("formCheckout")){
 
         total += costoEnvio;
 
-        let mensaje = 
-        
+       let mensaje = 
 "*Nuevo Pedido PRISFLOWER*\n\n" +
 "Nombre: " + nombre + "\n" +
-"Teléfono: " + telefono + "\n" +
+"Teléfono: " + tel + "\n" +
 "Ciudad: " + ciudad + "\n" +
-"Dirección: " + direccion + "\n\n" +
-"Método de entrega: " + envio + "\n" +
+"Dirección: " + dir + "\n\n" +
+"Método de entrega: " + metodo + "\n" +
 "Método de pago: " + metodo + "\n\n" +
 "Pedido:\n" +
 lista + "\n" +
@@ -165,11 +164,13 @@ lista + "\n" +
 "Notas del pedido: " + (notas ? notas : "Sin notas adicionales");
 
 
+
         window.location.href = "https://wa.me/593984050838?text="+encodeURIComponent(mensaje);
 
         localStorage.removeItem("carrito");
     });
 }
+
 
 
 
