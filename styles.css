@@ -318,6 +318,32 @@ body {
     transform: translateY(0);
 }
 
+/* ===== FOOTER PRISFLOWER ===== */
+
+footer {
+    text-align: center;
+    padding: 20px 0;
+    font-size: 16px;
+    color: var(--rose-gold-soft);
+}
+
+/* Enlaces del footer */
+footer a {
+    color: var(--rose-gold-soft);
+    text-decoration: none;
+    font-weight: bold;
+
+    background-image: var(--glitter-text);
+    -webkit-background-clip: text;
+    color: transparent; /* glitter real */
+}
+
+/* Hover */
+footer a:hover {
+    filter: brightness(1.4);
+}
+
+
 
 
 
