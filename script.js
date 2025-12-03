@@ -160,6 +160,7 @@ if(document.getElementById("formCheckout")){
 "Dirección: " + dir + "\n\n" +
 "Método de entrega: " + metodo + "\n" +
 "Método de pago: " + metodoPago + "\n\n" +
+          
 "Pedido:\n" +
 lista + "\n" +
 "Total: $" + total.toFixed(2) + "\n\n" +
@@ -172,6 +173,7 @@ lista + "\n" +
         localStorage.removeItem("carrito");
     });
 }
+
 
 
 
