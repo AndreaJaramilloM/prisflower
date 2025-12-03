@@ -125,6 +125,7 @@ if(document.getElementById("formCheckout")){
 
         let nombre=document.getElementById("nombre").value;
         let tel=document.getElementById("telefono").value;
+        let provincia = document.getElementById("provincia").value;
         let ciudad=document.getElementById("ciudad").value;
         let dir=document.getElementById("direccion").value;
         let notas=document.getElementById("notas").value;
@@ -141,7 +142,9 @@ if(document.getElementById("formCheckout")){
                 "Guayas": 2.50, "Santa Elena": 3.50, "Manabí": 4.00, "Los Ríos": 3.80,
                 "El Oro": 4.50, "Azuay": 5.00, "Pichincha": 5.50
             };
-            costoEnvio = tarifas[ciudad] || 5.50;
+
+           costoEnvio = tarifas[provincia] || 5.50;
+
         }
 
         let lista="";
@@ -152,7 +155,6 @@ if(document.getElementById("formCheckout")){
             total += p.precio * p.cantidad;
         });
 
-        total += costoEnvio;
 
       total += costoEnvio;
 
@@ -179,6 +181,7 @@ lista + "\n" +
         localStorage.removeItem("carrito");
     });
 }
+
 
 
 
