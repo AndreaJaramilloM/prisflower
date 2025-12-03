@@ -129,6 +129,8 @@ if(document.getElementById("formCheckout")){
         let dir=document.getElementById("direccion").value;
         let notas=document.getElementById("notas").value;
         let metodo=document.getElementById("metodoEnvio").value;
+       let metodoPago = document.getElementById("metodoPago").value;
+
 
         let costoEnvio = 0;
 
@@ -157,7 +159,7 @@ if(document.getElementById("formCheckout")){
 "Ciudad: " + ciudad + "\n" +
 "Dirección: " + dir + "\n\n" +
 "Método de entrega: " + metodo + "\n" +
-"Método de pago: " + metodo + "\n\n" +
+"Método de pago: " + metodoPago + "\n\n" +
 "Pedido:\n" +
 lista + "\n" +
 "Total: $" + total.toFixed(2) + "\n\n" +
@@ -170,6 +172,7 @@ lista + "\n" +
         localStorage.removeItem("carrito");
     });
 }
+
 
 
 
