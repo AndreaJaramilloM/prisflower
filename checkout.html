@@ -14,60 +14,43 @@
 
     <nav class="menu">
         <a href="index.html">Inicio</a>
-        <a href="carrito.html">Carrito</a>
+        <a href="carrito.html">Carrito <span id="contadorCarrito">0</span></a>
     </nav>
 </header>
 
 <section class="checkout">
 
-    <h1>Finalizar Compra</h1>
-
-    <p class="aviso-checkout">
-        🌸 <b>Importante:</b> Los pedidos deben realizarse con anticipación para asegurar disponibilidad.
-    </p>
-
-    <p class="aviso-checkout">
-        🌸 <b>Entrega Gratis (solo Guayaquil):</b> puntos públicos como Mall del Sur, Mall El Fortín, City Mall, Mall del Sol, Terminal, Metro, etc.
-    </p>
+    <h1>Finalizar Pedido</h1>
 
     <form id="formCheckout">
 
         <label>Nombre completo</label>
-        <input type="text" id="nombre" required>
+        <input id="nombre" required>
 
         <label>Teléfono</label>
-        <input type="text" id="telefono" required>
+        <input id="telefono" required>
 
         <label>Ciudad</label>
-        <input type="text" id="ciudad" required placeholder="Ej: Guayaquil, Quito, Manta...">
+        <input id="ciudad" required>
 
-        <label>Dirección o Punto público</label>
-        <input type="text" id="direccion" required placeholder="Mall del Sur, Parada del Metro...">
+        <label>Dirección</label>
+        <input id="direccion" required>
+
+        <label>Método de entrega</label>
+        <select id="metodoEnvio" required>
+            <option value="publico">Retiro en punto público (Guayaquil) — GRATIS</option>
+            <option value="agencia">Retiro en agencia Servientrega — Costo según ciudad</option>
+        </select>
 
         <label>Notas</label>
         <textarea id="notas"></textarea>
 
-        <label>Método de entrega</label>
-        <select id="metodoEntrega" required>
-            <option value="punto">Retiro en punto público (Guayaquil) – GRATIS</option>
-            <option value="agencia">Retiro en agencia (Servientrega) – Costo según ciudad</option>
-        </select>
-
-        <label>Método de pago</label>
-        <select id="metodo" required>
-            <option>Efectivo</option>
-            <option>Transferencia</option>
-            <option>PayPhone</option>
-        </select>
-
-        <button class="btn" type="submit">Confirmar Pedido</button>
+        <button class="btn" type="submit">Confirmar pedido</button>
 
     </form>
 
 </section>
 
 <script src="script.js"></script>
-
 </body>
 </html>
-
