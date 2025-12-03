@@ -2,12 +2,17 @@
    PALETA GENERAL
 ============================================ */
 :root {
-    --negro: #0d0d0d;
-    --rose1: #f6d4c8;
-    --rose2: #e8b9b0;
-    --rose3: #f7e1d5;
-    --rose4: #e0a99a;
-    --texto: #f6e5df;
+    --negro: #0f0f0f;
+
+    /* Rose gold degradado */
+    --rose1: #C17A7C;
+    --rose2: #A95B5F;
+
+    /* Para bordes y sombras */
+    --rose-strong: #8F4F52;
+
+    /* Glitter real en PNG (colócalo en img/glitter.png) */
+    --glitter: url('img/glitter.png');
 }
 
 /* ============================================
@@ -311,4 +316,5 @@ body {
     opacity: 1;
     transform: translateY(0);
 }
+
 
