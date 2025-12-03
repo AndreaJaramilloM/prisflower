@@ -1,165 +1,137 @@
-/* ============================================
-   PALETA GENERAL
-============================================ */
+/* ===========================================
+   PALETA PRINCIPAL – PRISFLOWER
+=========================================== */
+
 :root {
-    --negro: #0f0f0f;
-
-    /* Rose gold degradado */
-    --rose1: #C17A7C;
-    --rose2: #A95B5F;
-
-    /* Para bordes y sombras */
-    --rose-strong: #8F4F52;
-
-    /* Glitter real en PNG (colócalo en img/glitter.png) */
-    --glitter: url('img/glitter.png');
+    --fondo-negro: #0a0a0a;
+    --rose-gold-soft: #d7a7a7;
+    --glitter-text: url("img/glitter.png");
+    --textura-glitter: url("img/glitter.png");
 }
 
-/* ============================================
-   FORMATO GENERAL
-============================================ */
+
+/* ===========================================
+   ESTILOS BASE
+=========================================== */
+
 body {
     margin: 0;
-    background: var(--negro);
-    color: var(--texto);
-    font-family: "Georgia", serif;
+    background: var(--fondo-negro);
+    font-family: 'Georgia', serif;
+    color: #f8eaea;
 }
 
-/* ============================================
-   TEXTO ROSE GOLD
-============================================ */
-.rose-gold {
-    background: linear-gradient(90deg,
-        var(--rose1), var(--rose2),
-        var(--rose3), var(--rose4));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    font-weight: 700;
-    text-shadow: 0 0 8px rgba(255, 230, 230, 0.4);
-}
 
-/* ============================================
-   TEXTO GLITTER EFECTO BRILLO
-============================================ */
-.glitter {
-    background: linear-gradient(90deg,
-        #f7e3db 0%,
-        #f2c4b8 20%,
-        #fceae4 40%,
-        #eab8ad 60%,
-        #f7e3db 100%
-    );
+/* ===========================================
+   TEXTOS CON GLITTER REAL
+=========================================== */
+
+.glitter-text {
+    background-image: var(--glitter-text);
+    background-size: cover;
+    background-repeat: repeat;
     -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color: transparent;
     font-weight: bold;
-    position: relative;
 }
 
-.glitter::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: -50%;
-    width: 200%;
-    height: 100%;
-    background: linear-gradient(120deg,
-        transparent 0%,
-        rgba(255,255,255,0.7) 40%,
-        transparent 80%);
-    animation: shine 2.5s infinite linear;
-}
 
-@keyframes shine {
-    from { transform: translateX(-100%); }
-    to { transform: translateX(100%); }
-}
-
-/* ============================================
+/* ===========================================
    NAVBAR
-============================================ */
+=========================================== */
+
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 25px 50px;
-    background: var(--negro);
+    background: var(--fondo-negro);
     position: sticky;
     top: 0;
-    z-index: 50;
+    z-index: 20;
 }
 
 .navbar img {
     height: 60px;
 }
 
-.navbar a {
-    font-size: 22px;
+.navbar nav a {
+    margin: 0 25px;
+    font-size: 24px;
     text-decoration: none;
-    background: linear-gradient(90deg, var(--rose1), var(--rose3), var(--rose4));
+    background-image: var(--glitter-text);
+    background-size: cover;
     -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    font-weight: 700;
-    margin: 0 20px;
-    transition: .3s;
+    color: transparent;
+    font-weight: bold;
+    letter-spacing: 1px;
+    transition: 0.3s;
 }
 
-.navbar a:hover {
-    filter: brightness(1.3);
-    text-shadow: 0 0 12px rgba(255, 220, 220, 0.7);
+.navbar nav a:hover {
+    filter: brightness(1.5);
 }
 
 .carrito-icon span {
-    background: var(--rose2);
-    padding: 5px 10px;
+    padding: 5px 14px;
     border-radius: 40px;
+    background-image: var(--glitter-text);
+    color: black;
     font-weight: bold;
 }
 
-/* ============================================
+
+/* ===========================================
    HERO
-============================================ */
+=========================================== */
+
 .hero {
     text-align: center;
-    padding: 110px 20px;
+    padding: 130px 20px;
 }
 
 .hero h1 {
-    font-size: 70px;
-    background: linear-gradient(90deg, var(--rose1), var(--rose2), var(--rose4));
+    font-size: 80px;
+    background-image: var(--glitter-text);
     -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    font-weight: 900;
+    color: transparent;
 }
 
 .hero p {
-    font-size: 24px;
-    margin-top: 10px;
+    font-size: 26px;
+    margin-top: -10px;
 }
 
 .btn {
-    background: linear-gradient(135deg, 
-        var(--rose1), var(--rose2), var(--rose3), var(--rose4));
-    padding: 12px 30px;
-    border-radius: 12px;
+    background-image: var(--textura-glitter);
     border: none;
-    color: #3b2b2b;
-    text-decoration: none;
-    font-weight: bold;
-    box-shadow: 0 0 10px rgba(255,200,200,0.4);
-    transition: .3s;
+    padding: 14px 35px;
+    border-radius: 10px;
+    font-size: 20px;
+    color: black;
+    cursor: pointer;
+    transition: 0.3s;
 }
 
 .btn:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 0 15px rgba(255,220,220,0.7);
+    filter: brightness(1.3);
 }
 
-/* ============================================
-   SECCIÓN PRODUCTOS
-============================================ */
+
+/* ===========================================
+   PRODUCTOS
+=========================================== */
+
 .productos-section {
     padding: 80px 40px;
+}
+
+.productos-section h2 {
     text-align: center;
+    font-size: 55px;
+    background-image: var(--glitter-text);
+    -webkit-background-clip: text;
+    color: transparent;
 }
 
 .productos-grid {
@@ -168,91 +140,114 @@ body {
     gap: 50px;
 }
 
-/* Tarjeta */
 .producto {
-    background: #121212;
+    background: #111;
     padding: 25px;
     border-radius: 20px;
     text-align: center;
-    transition: .3s;
+    transition: 0.3s;
+}
+
+.producto img {
+    width: 90%;
+    height: 330px;
+    object-fit: cover;
+    border-radius: 20px;
+    cursor: pointer;
 }
 
 .producto:hover {
     transform: translateY(-8px);
 }
 
-.producto img {
-    width: 90%;
-    border-radius: 18px;
-    cursor: pointer;
-}
-
 .producto button {
-    margin-top: 12px;
+    background-image: var(--glitter-text);
+    padding: 12px 30px;
+    border-radius: 10px;
+    border: none;
 }
 
-/* ============================================
-   DETALLE DE PRODUCTO
-============================================ */
+
+/* ===========================================
+   PÁGINA DETALLE DE PRODUCTO
+=========================================== */
+
 .detalle-container {
     display: flex;
     justify-content: center;
-    align-items: center;
-    padding: 80px;
     gap: 60px;
+    padding: 80px;
 }
 
 .detalle-img img {
-    width: 430px;
+    width: 420px;
     border-radius: 20px;
 }
 
 .detalle-info h2 {
+    background-image: var(--glitter-text);
+    -webkit-background-clip: text;
+    color: transparent;
     font-size: 45px;
 }
 
-/* ============================================
+.detalle-info p {
+    font-size: 20px;
+    margin-bottom: 30px;
+}
+
+
+/* ===========================================
    CARRITO
-============================================ */
+=========================================== */
+
 .titulo-carrito {
     text-align: center;
-    font-size: 55px;
-    margin-top: 60px;
+    font-size: 60px;
+    margin-top: 40px;
+    background-image: var(--glitter-text);
+    -webkit-background-clip: text;
+    color: transparent;
 }
 
 .carrito-container {
-    width: 85%;
+    width: 80%;
     margin: 40px auto;
 }
 
 .item-carrito {
     background: #151515;
-    padding: 30px;
-    border-radius: 20px;
+    padding: 25px;
+    border-radius: 18px;
     display: flex;
     justify-content: space-between;
-    align-items: center;
     margin-bottom: 25px;
+    align-items: center;
 }
 
 .carrito-img {
-    width: 120px;
+    width: 135px;
     border-radius: 15px;
 }
 
 .cantidad-box button {
-    background: var(--rose2);
+    background-image: var(--glitter-text);
     border: none;
-    padding: 5px 12px;
+    padding: 7px 12px;
     border-radius: 6px;
     cursor: pointer;
 }
 
+.cantidad-box span {
+    margin: 0 10px;
+    font-size: 22px;
+}
+
 .basura {
-    background: #ff4d67;
-    border: none;
+    background: #ff5b5b;
     padding: 10px;
     border-radius: 6px;
+    border: none;
     cursor: pointer;
 }
 
@@ -264,57 +259,64 @@ body {
 
 .carrito-botones {
     text-align: center;
-    margin-bottom: 60px;
+    margin-top: 40px;
 }
 
 .carrito-botones .btn {
     margin: 0 20px;
 }
 
-/* ============================================
-   CHECKOUT
-============================================ */
-.checkout {
-    width: 60%;
-    margin: 80px auto;
+
+/* ===========================================
+   CHECKOUT (WHATSAPP)
+=========================================== */
+
+.checkout h1 {
+    text-align: center;
+    font-size: 55px;
+    background-image: var(--glitter-text);
+    -webkit-background-clip: text;
+    color: transparent;
 }
 
-.checkout label {
-    font-weight: bold;
-    color: var(--rose2);
+.checkout form {
+    width: 60%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
 }
 
 .checkout input,
 .checkout select,
 .checkout textarea {
-    width: 100%;
     padding: 12px;
-    background: #111;
-    border: 1px solid var(--rose4);
-    border-radius: 8px;
-    color: var(--texto);
     margin-bottom: 20px;
+    border-radius: 10px;
+    border: none;
 }
 
-/* ============================================
+
+/* ===========================================
    TOAST
-============================================ */
+=========================================== */
+
 #toast {
     position: fixed;
     bottom: 40px;
     right: 40px;
-    background: var(--rose2);
     padding: 15px 25px;
+    background-image: var(--glitter-text);
     border-radius: 10px;
-    color: #3b2b2b;
+    color: black;
     opacity: 0;
     transform: translateY(20px);
-    transition: .4s;
+    transition: 0.4s;
 }
 
 #toast.mostrar {
     opacity: 1;
     transform: translateY(0);
 }
+
 
 
