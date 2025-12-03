@@ -1,162 +1,314 @@
-/* ============================
-   PALETA ROSE GOLD METÁLICO
-============================ */
+/* ============================================
+   PALETA GENERAL
+============================================ */
 :root {
-    --rose1: #f9c5b4;
-    --rose2: #eac4b5;
-    --rose3: #d89c8c;
-    --rose4: #b97b6f;
-    --black: #0f0f0f;
-    --white: #fdf2ed;
+    --negro: #0d0d0d;
+    --rose1: #f6d4c8;
+    --rose2: #e8b9b0;
+    --rose3: #f7e1d5;
+    --rose4: #e0a99a;
+    --texto: #f6e5df;
 }
 
-/* Degradado metálico */
-.metalgold {
-    background: linear-gradient(90deg, var(--rose1), var(--rose2), var(--rose3), var(--rose4));
-    -webkit-background-clip: text;
-    color: transparent;
-}
-
-
-/* ============================
-   GENERAL
-============================ */
+/* ============================================
+   FORMATO GENERAL
+============================================ */
 body {
-    background: var(--black);
-    color: var(--white);
-    font-family: "Georgia", serif;
     margin: 0;
+    background: var(--negro);
+    color: var(--texto);
+    font-family: "Georgia", serif;
 }
 
-/* ============================
+/* ============================================
+   TEXTO ROSE GOLD
+============================================ */
+.rose-gold {
+    background: linear-gradient(90deg,
+        var(--rose1), var(--rose2),
+        var(--rose3), var(--rose4));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 700;
+    text-shadow: 0 0 8px rgba(255, 230, 230, 0.4);
+}
+
+/* ============================================
+   TEXTO GLITTER EFECTO BRILLO
+============================================ */
+.glitter {
+    background: linear-gradient(90deg,
+        #f7e3db 0%,
+        #f2c4b8 20%,
+        #fceae4 40%,
+        #eab8ad 60%,
+        #f7e3db 100%
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: bold;
+    position: relative;
+}
+
+.glitter::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -50%;
+    width: 200%;
+    height: 100%;
+    background: linear-gradient(120deg,
+        transparent 0%,
+        rgba(255,255,255,0.7) 40%,
+        transparent 80%);
+    animation: shine 2.5s infinite linear;
+}
+
+@keyframes shine {
+    from { transform: translateX(-100%); }
+    to { transform: translateX(100%); }
+}
+
+/* ============================================
    NAVBAR
-============================ */
+============================================ */
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 25px 50px;
-    background: var(--black);
+    background: var(--negro);
+    position: sticky;
+    top: 0;
+    z-index: 50;
 }
 
-.menu a {
+.navbar img {
+    height: 60px;
+}
+
+.navbar a {
     font-size: 22px;
     text-decoration: none;
-    background: linear-gradient(90deg, var(--rose1), var(--rose3));
+    background: linear-gradient(90deg, var(--rose1), var(--rose3), var(--rose4));
     -webkit-background-clip: text;
-    color: transparent;
+    -webkit-text-fill-color: transparent;
+    font-weight: 700;
     margin: 0 20px;
+    transition: .3s;
+}
+
+.navbar a:hover {
+    filter: brightness(1.3);
+    text-shadow: 0 0 12px rgba(255, 220, 220, 0.7);
+}
+
+.carrito-icon span {
+    background: var(--rose2);
+    padding: 5px 10px;
+    border-radius: 40px;
     font-weight: bold;
 }
 
-.menu a:hover {
-    color: var(--rose1);
+/* ============================================
+   HERO
+============================================ */
+.hero {
+    text-align: center;
+    padding: 110px 20px;
 }
 
-#contadorCarrito {
-    background: linear-gradient(90deg, var(--rose1), var(--rose3));
-    color: black;
-    padding: 4px 14px;
-    border-radius: 25px;
-    font-weight: bold;
+.hero h1 {
+    font-size: 70px;
+    background: linear-gradient(90deg, var(--rose1), var(--rose2), var(--rose4));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 900;
 }
 
-/* ============================
-   BOTONES ROSE GOLD
-============================ */
+.hero p {
+    font-size: 24px;
+    margin-top: 10px;
+}
+
 .btn {
-    background: linear-gradient(90deg, var(--rose1), var(--rose3));
-    border: none;
+    background: linear-gradient(135deg, 
+        var(--rose1), var(--rose2), var(--rose3), var(--rose4));
     padding: 12px 30px;
-    border-radius: 10px;
-    color: black;
-    font-size: 18px;
-    cursor: pointer;
-}
-.btn:hover {
-    filter: brightness(1.2);
+    border-radius: 12px;
+    border: none;
+    color: #3b2b2b;
+    text-decoration: none;
+    font-weight: bold;
+    box-shadow: 0 0 10px rgba(255,200,200,0.4);
+    transition: .3s;
 }
 
-/* ============================
-   PRODUCTOS
-============================ */
+.btn:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 0 15px rgba(255,220,220,0.7);
+}
+
+/* ============================================
+   SECCIÓN PRODUCTOS
+============================================ */
+.productos-section {
+    padding: 80px 40px;
+    text-align: center;
+}
+
 .productos-grid {
     display: grid;
-    padding: 40px;
-    gap: 40px;
     grid-template-columns: repeat(2, 1fr);
+    gap: 50px;
 }
 
+/* Tarjeta */
 .producto {
-    background: #141414;
+    background: #121212;
     padding: 25px;
     border-radius: 20px;
     text-align: center;
-    border: 2px solid var(--rose3);
+    transition: .3s;
+}
+
+.producto:hover {
+    transform: translateY(-8px);
 }
 
 .producto img {
     width: 90%;
-    border-radius: 20px;
+    border-radius: 18px;
     cursor: pointer;
 }
 
-.producto h3, .producto p {
-    background: linear-gradient(90deg, var(--rose1), var(--rose3));
-    -webkit-background-clip: text;
-    color: transparent;
+.producto button {
+    margin-top: 12px;
 }
 
-/* ============================
-   DETALLE
-============================ */
+/* ============================================
+   DETALLE DE PRODUCTO
+============================================ */
 .detalle-container {
-    padding: 60px;
     display: flex;
     justify-content: center;
-    gap: 50px;
+    align-items: center;
+    padding: 80px;
+    gap: 60px;
+}
+
+.detalle-img img {
+    width: 430px;
+    border-radius: 20px;
 }
 
 .detalle-info h2 {
-    font-size: 40px;
-    background: linear-gradient(90deg, var(--rose1), var(--rose3));
-    -webkit-background-clip: text;
-    color: transparent;
+    font-size: 45px;
 }
 
-/* ============================
+/* ============================================
    CARRITO
-============================ */
+============================================ */
+.titulo-carrito {
+    text-align: center;
+    font-size: 55px;
+    margin-top: 60px;
+}
+
+.carrito-container {
+    width: 85%;
+    margin: 40px auto;
+}
+
 .item-carrito {
     background: #151515;
-    border: 2px solid var(--rose3);
-    border-radius: 20px;
     padding: 30px;
+    border-radius: 20px;
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.carrito-img {
+    width: 120px;
+    border-radius: 15px;
+}
+
+.cantidad-box button {
+    background: var(--rose2);
+    border: none;
+    padding: 5px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.basura {
+    background: #ff4d67;
+    border: none;
+    padding: 10px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.carrito-total {
+    text-align: right;
+    padding-right: 10%;
+    font-size: 28px;
+}
+
+.carrito-botones {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.carrito-botones .btn {
+    margin: 0 20px;
+}
+
+/* ============================================
+   CHECKOUT
+============================================ */
+.checkout {
+    width: 60%;
+    margin: 80px auto;
+}
+
+.checkout label {
+    font-weight: bold;
+    color: var(--rose2);
+}
+
+.checkout input,
+.checkout select,
+.checkout textarea {
+    width: 100%;
+    padding: 12px;
+    background: #111;
+    border: 1px solid var(--rose4);
+    border-radius: 8px;
+    color: var(--texto);
     margin-bottom: 20px;
 }
 
-.precio-final, .precio {
-    background: linear-gradient(90deg, var(--rose1), var(--rose3));
-    -webkit-background-clip: text;
-    color: transparent;
-}
-
-/* ============================
+/* ============================================
    TOAST
-============================ */
+============================================ */
 #toast {
     position: fixed;
-    bottom: 25px;
-    right: 25px;
-    background: linear-gradient(90deg, var(--rose1), var(--rose3));
-    padding: 12px 25px;
-    border-radius: 12px;
-    color: black;
+    bottom: 40px;
+    right: 40px;
+    background: var(--rose2);
+    padding: 15px 25px;
+    border-radius: 10px;
+    color: #3b2b2b;
     opacity: 0;
+    transform: translateY(20px);
     transition: .4s;
 }
+
 #toast.mostrar {
     opacity: 1;
+    transform: translateY(0);
 }
+
