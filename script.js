@@ -2,10 +2,13 @@
    PRODUCTOS
 ============================ */
 const productos = [
-    { nombre: "Bouquet de Lirios", precio: 18, img: "img/lirio.jpg", descripcion: "Bouquet hermoso." },
-    { nombre: "Girasol en Cúpula", precio: 22, img: "img/cupula.jpg", descripcion: "Girasol elegante." },
-    { nombre: "Cesta de Girasoles", precio: 25, img: "img/cesta.jpg", descripcion: "Cesta Premium." },
-    { nombre: "Caja Romántica", precio: 15, img: "img/rosa.jpg", descripcion: "Detalle romántico." }
+    { nombre: "Bouquet de Lirios", precio: 27, img: "img/Bouquet de Lirios.png", descripcion: "Bouquet hermoso Presentado en una caja rosa con acabado premium, este diseño es perfecto para transmitir amor, gratitud y dulzura. Un detalle delicado y especial hecho con amor por PrisFlower." },
+    { nombre: "Girasol en Cúpula", precio: 22, img: "img/Girasol en Cúpula.png", descripcion: "Un girasol artesanal preservado bajo campana, lleno de detalles delicados y un acabado premium. Perfecto para decorar, regalar y transmitir luz." },
+    { nombre: "Bouquet de Lirios Blancos", precio: 25, img: "img/ramos-lirios blancos.jpg", descripcion: "Un bouquet elegante y delicado compuesto por lirios blancos artesanales y pequeñas flores de acento amarillo. Cada pétalo está trabajado a mano, logrando un efecto suave y armonioso ." },
+    { nombre: "Blue Sunshine", precio: 15, img: "img/Blue Sunshine.png", descripcion: "Detalle romántico un diseño elegante, llamativo y perfecto para sorprender." },
+    { nombre: "Mini Flores", precio: 5, img: "img/mini-flores.png", descripcion: "Minis Flores artesanales hechos a mano. Perfectos para regalar amor, amistad o agradecimiento." },
+    { nombre: "Ramo de Girasol", precio: 18, img: "img/Ramo de girasol.png", descripcion: "Ramo artesanal con flores en tonos amarillos y un adorable osito que lo hace aún más especial. Perfecto para sorprender en cumpleaños, aniversarios o simplemente para demostrar cariño." },
+
 ];
 
 /* ============================
@@ -170,4 +173,5 @@ ${lista}
         localStorage.removeItem("carrito");
     });
 }
+
 
