@@ -154,18 +154,21 @@ if(document.getElementById("formCheckout")){
 
         total += costoEnvio;
 
-       let mensaje = 
+      total += costoEnvio;
+
+      let mensaje = 
 "*Nuevo Pedido PRISFLOWER*\n\n" +
 "Nombre: " + nombre + "\n" +
 "Teléfono: " + tel + "\n" +
+"Provincia: " + provincia + "\n" +
 "Ciudad: " + ciudad + "\n" +
 "Dirección: " + dir + "\n\n" +
 "Método de entrega: " + metodo + "\n" +
 "Método de pago: " + metodoPago + "\n" +
 "Banco seleccionado: " + banco + "\n\n" +
-          
 "Pedido:\n" +
 lista + "\n" +
+"Costo de envío: $" + costoEnvio.toFixed(2) + "\n" +
 "Total: $" + total.toFixed(2) + "\n\n" +
 "Notas del pedido: " + (notas ? notas : "Sin notas adicionales");
 
