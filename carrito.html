@@ -3,36 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Carrito - PrisFlower</title>
+    <title>Carrito · PrisFlower</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 
-<body onload="cargarCarrito()">
+<body>
 
-<!-- NAVBAR -->
 <header class="navbar">
     <div class="logo"><img src="img/logo.png"></div>
 
     <nav class="menu">
         <a href="index.html">Inicio</a>
-        <a href="carrito.html" class="carrito-icon">Carrito <span id="contadorCarrito">0</span></a>
+        <a href="carrito.html">Carrito <span id="contadorCarrito">0</span></a>
     </nav>
 </header>
 
-<h1 class="titulo-carrito">Mi Carrito</h1>
+<h1 class="titulo-carrito">Tu Carrito</h1>
 
-<div class="carrito-container" id="carritoLista"></div>
+<section class="carrito-container">
 
-<div class="carrito-total">
-    Total: $<span id="totalFinal">0.00</span>
-</div>
+    <div id="carritoLista"></div>
 
-<div class="carrito-botones">
-    <a class="btn" href="index.html">Seguir comprando</a>
-    <a class="btn" href="checkout.html">Proceder al Pago</a>
-</div>
+    <p class="carrito-total">
+        Total: $<span id="totalFinal">0.00</span>
+    </p>
+
+    <div class="carrito-botones">
+        <a class="btn" href="index.html">Seguir comprando</a>
+        <a class="btn" href="checkout.html">Pagar</a>
+    </div>
+
+</section>
 
 <script src="script.js"></script>
-
 </body>
 </html>
